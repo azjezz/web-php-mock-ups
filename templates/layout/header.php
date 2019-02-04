@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/atom-one-dark.min.css">
     <link rel="shortcut icon" type="image/png" href="/asset/img/logo.png"/>
     <style>
-        body {
+        header.navbar, div.hero.bg-gray.main {
             padding: 2em;
         }
     </style>

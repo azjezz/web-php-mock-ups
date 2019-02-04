@@ -5,6 +5,7 @@ see : https://externals.io/message/104088
 ```console
 $ git clone https://github.com/azjezz/web-php-mock-ups
 $ cd web-php-mock-ups
+$ composer install
 $ cd public
 $ php -S 127.0.0.1:8080
 ```
@@ -16,3 +17,7 @@ $ php -S 127.0.0.1:8080
 
 ### Getting Started
 ![getting-started](https://github.com/azjezz/web-php-mock-ups/blob/master/screenshots/getting-started.png)
+
+### Installation
+
+![installation](https://github.com/azjezz/web-php-mock-ups/blob/master/screenshots/installation.png)

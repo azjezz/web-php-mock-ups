@@ -1,34 +1,57 @@
 <?php declare(strict_types=1);
 
-require '../functions.php';
+namespace PHP;
 
-$sample = PHP\Layout\source(
-"<?php declare(strict_types=1);
+use Zend;
+use League\{
+    Container, Route, Plates
+};
+use Narrowspark\HttpEmitter;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
-function greet(string \$name): void
-{
-    echo 'Hello, ' . \$name . ' !';
+require '../vendor/autoload.php';
+
+/*
+ * I didn't use a framework
+ * :^)
+ */
+
+$container = new Container\Container();
+$container->addServiceProvider(new ServiceProvider\LeagueServiceProvider());
+
+$router = $container->get(Route\Router::class);
+
+$router->get('/', function (Request $request) use($container): Response {
+    $engine = $container->get(Plates\Engine::class);
+    return new Zend\Diactoros\Response\HtmlResponse($engine->render('landing'));
+});
+
+/*
+ * /getting-started -> getting-started/introduction/what-is-php
+ */
+$router->get('/getting-started', function(): Response {
+    return new Zend\Diactoros\Response\RedirectResponse('/getting-started/introduction/what-is-php');
+});
+
+$pages = [
+    'getting-started/introduction/what-is-php',
+    'getting-started/introduction/what-can-php-do',
+    'getting-started/installation',
+    'getting-started/installation/linux',
+    'getting-started/installation/windows',
+    'getting-started/installation/macos',
+    'getting-started/installation/other-platforms',
+];
+
+foreach ($pages as $page) {
+    $router->get('/'.$page, function (Request $request) use($container, $page) : Response  {
+        $engine = $container->get(Plates\Engine::class);
+        return new Zend\Diactoros\Response\HtmlResponse($engine->render($page));
+    });
 }
 
-greet('World'); // Hello, World !"
-);
+$request = Zend\Diactoros\ServerRequestFactory::fromGlobals();
+$response = $router->dispatch($request);
 
-$content = <<<HTML
-    <div class="hero bg-gray">
-        <div class="hero-body">
-            <h2>
-                <span class='text-bold'>PHP</span> Hypertext Preprocessor
-            </h2>
-            <pre class="code php">
-                <code class="bg-dark text-light">{$sample}</code>
-            </pre>
-            <a href="/getting-started" class="btn btn-link btn-lg p-centered ">Get Started</a>
-        </div>
-    </div>
-HTML;
-
-PHP\Http\Response\html(
-    PHP\Layout\header('PHP'),
-    $content,
-    PHP\Layout\footer()
-);
+(new HttpEmitter\SapiEmitter)->emit($response);

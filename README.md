@@ -18,6 +18,6 @@ $ php -S 127.0.0.1:8080
 ### Getting Started
 ![getting-started](https://github.com/azjezz/web-php-mock-ups/blob/master/screenshots/getting-started.png)
 
-### Installation
+### Get Involved
 
-![installation](https://github.com/azjezz/web-php-mock-ups/blob/master/screenshots/installation.png)
+![get-involved](https://github.com/azjezz/web-php-mock-ups/blob/master/screenshots/get-involved.png)

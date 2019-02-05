@@ -25,7 +25,6 @@
         <a href="/docs" class="btn btn-link text-secondary">Docs</a>
         <a href="/get-involved" class="btn btn-link text-secondary">Get Involved</a>
         <a href="/community" class="btn btn-link text-secondary">Community</a>
-        <a href="/news" class="btn btn-link text-secondary">News</a>
     </section>
     <section class="navbar-section">
         <div class="input-group input-inline">

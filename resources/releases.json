@@ -1,0 +1,10 @@
+[
+    {
+        "version": "7.3.1",
+        "body": "The PHP development team announces the immediate availability of PHP 7.3.1.<br /> This is a security release which also contains several bug fixes.<br /><br /> All PHP 7.3 users are encouraged to upgrade to this version.<br /><br /> For source downloads of PHP 7.3.1 please visit our <a href=\"/downloads\">downloads page</a>, Windows source and binaries can be found on the <a href=\"/downloads/windows\">windows section</a>.<br />"
+    },
+    {
+        "version": "7.1.26",
+        "body": "The PHP development team announces the immediate availability of PHP 7.1.26. <br /> This is a security release which also contains several bug fixes.<br /><br /> All PHP 7.1 users are encouraged to upgrade to this version.<br /><br /> For source downloads of PHP 7.1.26 please visit our <a href=\"/downloads\">downloads page</a>, Windows source and binaries can be found on the <a href=\"/downloads/windows\">windows section</a>.<br />"
+    }
+]

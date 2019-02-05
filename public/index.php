@@ -9,6 +9,8 @@ use League\{
 use Narrowspark\HttpEmitter;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use function json_decode;
+use function file_get_contents;
 
 require '../vendor/autoload.php';
 
@@ -24,7 +26,13 @@ $router = $container->get(Route\Router::class);
 
 $router->get('/', function (Request $request) use($container): Response {
     $engine = $container->get(Plates\Engine::class);
-    return new Zend\Diactoros\Response\HtmlResponse($engine->render('landing'));
+    $releases = json_decode(file_get_contents(__DIR__ . '/../resources/releases.json'), true);
+    $events = json_decode(file_get_contents(__DIR__ . '/../resources/events.json'), true);
+
+    return new Zend\Diactoros\Response\HtmlResponse($engine->render('landing', [
+        'releases' => $releases,
+        'events' => $events
+    ]));
 });
 
 /*

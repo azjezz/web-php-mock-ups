@@ -21,6 +21,7 @@ function greet(string $name): void
 
 greet('World'); // Hello, World !</code></pre>
         </div>
+<<<<<<< HEAD
     </div>
 <br />
 </div>

@@ -12,7 +12,7 @@
             </p>
         </div>
         <div class="column col-8">
-        <h3 class="text-primary">Latests releases</h3>        
+        <h3 class="text-primary">Latest releases</h3>        
         <?php
         foreach (($releases ?? []) as $release) {
             echo $this->fetch('component/release-card', $release);

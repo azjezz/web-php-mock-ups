@@ -42,6 +42,7 @@ $pages = [
     'getting-started/installation/windows',
     'getting-started/installation/macos',
     'getting-started/installation/other-platforms',
+    'get-involved'
 ];
 
 foreach ($pages as $page) {

@@ -1,5 +1,4 @@
-<br />
-<hr />
+<hr class="text-secondary" />
 <br />
 <div class="card">
   <div class="card-header">
@@ -14,3 +13,4 @@
     <button class="btn btn-secondary">ChangeLog</button>
   </div>
 </div>
+<br />

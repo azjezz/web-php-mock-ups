@@ -1,5 +1,4 @@
-<br />
-<hr />
+<hr class="text-secondary" />
 <br />
 <div class="card">
   <div class="card-image">
@@ -13,3 +12,4 @@
     <a href="<?= $url ?>" class="btn btn-link btn-secondary">Read more</a>
   </div>
 </div>
+<br />

@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Who pays for PHP?",
+        "author": "Sebastian Bergmann, Arne Blankerts and Stefan Priebsch",
+        "url": "https://thephp.cc/news/2019/01/who-pays-for-php"
+    },
+    {
+        "title": "The Death Star Version Constraint",
+        "author": "Sebastian Bergmann",
+        "url": "https://thephp.cc/news/2017/02/death-star-version-constraint"
+    },
+    {
+        "title": "The future of Zend",
+        "author": "Rob Allen",
+        "url": "https://thephp.cc/news/2018/10/the-future-of-zend"
+    }
+]

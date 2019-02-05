@@ -10,20 +10,51 @@
         Fast, flexible and pragmatic, <span class='text-bold'>PHP</span> powers everything from your blog to the most
         popular websites in the world.
     </p>
+    <div class="columns">
+        <div class="column col-6 p-centered">
+            <pre class="code php"><code class="bg-dark text-light">&lt?php declare(strict_types=1);
+
+function greet(string $name): void
+{
+    echo 'Hello, ' . $name . ' !';
+}
+
+greet('World'); // Hello, World !</code></pre>
+        </div>
+    </div>
+<br />
 </div>
-<div class="column col-8">
-    <h3 class="text-primary">Latests releases</h3>
+
+<div class="column col-4">
+    <h3 class="text-primary">Latest Releases</h3>
+    <hr class="text-secondary" />
     <?php
         foreach (($releases ?? []) as $release) {
             echo $this->fetch('component/release-card', $release);
         }
     ?>
+    <br />
+    <div class="loading"></div>
 </div>
 <div class="column col-4">
-    <h3 class="text-primary">Events</h3>
+    <h3 class="text-primary">Latest Articles</h3>
+    <hr class="text-secondary" />
+    <?php
+        foreach (($articles ?? []) as $article) {
+            echo $this->fetch('component/article-card', $article);
+        }
+    ?>
+    <br />
+    <div class="loading"></div>
+</div>
+<div class="column col-4">
+    <h3 class="text-primary">Upcoming Events</h3>
+    <hr class="text-secondary" />
     <?php
         foreach (($events ?? []) as $event) {
             echo $this->fetch('component/event-card', $event);
         }
     ?>
+    <br />
+    <div class="loading"></div>
 </div>

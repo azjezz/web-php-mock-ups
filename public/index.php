@@ -21,8 +21,12 @@ $router = $container->get(League\Route\Router::class);
 $router->get('/', function (Request $request) use($container): Response {
     $engine = $container->get(League\Plates\Engine::class);
     $releases = json_decode(file_get_contents(__DIR__ . '/../resources/releases.json'), true);
+    $events = json_decode(file_get_contents(__DIR__ . '/../resources/events.json'), true);
+    $articles = json_decode(file_get_contents(__DIR__ . '/../resources/articles.json'), true);
     return new Zend\Diactoros\Response\HtmlResponse($engine->render('landing', [
         'releases' => $releases,
+        'events' => $events,
+        'articles' => $articles
     ]));
 });
 

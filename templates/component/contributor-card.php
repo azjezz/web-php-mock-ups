@@ -12,4 +12,3 @@
     <small><?= $contributor['contributions'] ?> commits</small>
   </div>
 </div>
-<br />
